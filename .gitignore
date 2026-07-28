@@ -1,0 +1,15 @@
+.Xauthority
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.profile
+.ssh/
+.terraform.d/
+.terraform.lock.hcl
+.terraform/
+plan.txt
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+
