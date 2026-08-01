@@ -1,0 +1,26 @@
+services:
+  backend:
+    build: ./backend
+    container_name: sportshub-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    environment:
+      # Overrides whatever is in .env so the db lives on the mounted volume
+      DATABASE_URL: sqlite:////app/instance/sportshub.db
+    volumes:
+      - backend_data:/app/instance
+    expose:
+      - "8000"
+
+  frontend:
+    build: ./frontend
+    container_name: sportshub-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+volumes:
+  backend_data:
