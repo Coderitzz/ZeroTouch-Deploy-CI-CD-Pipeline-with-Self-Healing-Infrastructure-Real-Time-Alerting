@@ -12,4 +12,14 @@ plan.txt
 terraform.tfstate
 terraform.tfstate.backup
 terraform.tfvars
+.aws/config
+.aws/credentials
+.docker/.token_seed
+.docker/buildx/.buildNodeID
+.docker/buildx/current
+.docker/buildx/refs/default/default/6k6n3t8vvakn9zlx642vt6aor
+.docker/buildx/refs/default/default/nu9gi670eqd5jlxgwndh6gjxf
+.docker/buildx/refs/default/default/ohprrfstfithwdbjl6eo6i3xh
+.docker/buildx/refs/default/default/xyesvkf0sju4hcmjaoje1ywqf
+.npm/_logs/2026-08-01T07_05_40_867Z-debug-0.log
 

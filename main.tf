@@ -38,3 +38,15 @@ module "alb" {
   public_subnet_id-2 = module.vpc.public_subnet_id-2
   alb_sg_id = module.security_group.alb_sg_id
 }
+
+module "frontend_ecr" {
+  source = "./modules/ecr"
+  
+  repository_name = "sportshub-frontend"
+}
+
+module "backend_ecr" {
+  source = "./modules/ecr"
+
+  repository_name = "sportshub-backend"
+}
