@@ -1,24 +1,31 @@
+version: "3.9"
+
 services:
   backend:
-    build: ./backend
+    image: 692137657571.dkr.ecr.us-west-1.amazonaws.com/sportshub-backend:v1.0.0
     container_name: sportshub-backend
     restart: unless-stopped
+
     env_file:
       - ./backend/.env
+
     environment:
-      # Overrides whatever is in .env so the db lives on the mounted volume
       DATABASE_URL: sqlite:////app/instance/sportshub.db
+
     volumes:
       - backend_data:/app/instance
+
     expose:
-      - "8000"
+      - "5000"
 
   frontend:
-    build: ./frontend
+    image: 692137657571.dkr.ecr.us-west-1.amazonaws.com/sportshub-frontend:v1.0.0
     container_name: sportshub-frontend
     restart: unless-stopped
+
     depends_on:
       - backend
+
     ports:
       - "80:80"
 
