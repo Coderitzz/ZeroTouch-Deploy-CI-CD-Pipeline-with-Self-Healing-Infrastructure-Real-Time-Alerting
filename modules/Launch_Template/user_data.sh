@@ -49,7 +49,7 @@ git clone "$REPO_URL" sportshub
 
 # Create production .env
 
-cat > /home/ubuntu/sportshub/backend/.env <<EOF
+cat > /home/ubuntu/sportshub/sportshub/backend/.env <<EOF
 SECRET_KEY=RGA5Ex0gALjTpCcA6Ygv7FFt00zJwe9z
 JWT_SECRET_KEY=YjalUwsYkPVJRDNYkmnRSMiCl5L5CiDK
 DATABASE_URL=sqlite:///sportshub.db
@@ -66,7 +66,7 @@ $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
 
 # Deploy application
 
-cd /home/ubuntu/sportshub
+cd /home/ubuntu/sportshub/sportshub
 
 docker compose pull
 

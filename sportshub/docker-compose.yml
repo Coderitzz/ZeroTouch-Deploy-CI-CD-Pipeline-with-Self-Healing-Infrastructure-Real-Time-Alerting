@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   backend:
     image: 692137657571.dkr.ecr.us-west-1.amazonaws.com/sportshub-backend:v1.0.0
@@ -15,8 +13,8 @@ services:
     volumes:
       - backend_data:/app/instance
 
-    expose:
-      - "5000"
+    ports:
+      - "5000:5000"
 
   frontend:
     image: 692137657571.dkr.ecr.us-west-1.amazonaws.com/sportshub-frontend:v1.0.0
