@@ -18,7 +18,7 @@ resource "aws_lb_target_group" "app_tg" {
   target_type = "instance"
 
   health_check {
-    path                = "/health"
+    path                = "/api/health"
     interval            = 30
     healthy_threshold   = 2
     unhealthy_threshold = 3

@@ -11,7 +11,7 @@ REPO_URL="https://github.com/Coderitzz/ZeroTouch-Deploy-Jenkins-Driven-CI-CD-Pip
 #Install required packages
 
 apt-get update -y
-apt-get install -y docker.io git unzip curl
+apt-get install -y docker.io git unzip curl docker-compose
 
 systemctl enable docker
 systemctl start docker
