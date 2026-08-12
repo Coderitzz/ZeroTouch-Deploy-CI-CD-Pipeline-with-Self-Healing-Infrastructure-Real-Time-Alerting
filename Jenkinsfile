@@ -32,7 +32,7 @@ pipeline {
 
         stage('Build & Push Backend') {
             steps {
-                dir('backend') {
+                dir('sportshub/backend') {
                     sh '''
                         docker build \
                             -t $ECR_BACKEND:$BUILD_NUMBER \
@@ -51,7 +51,7 @@ pipeline {
 
         stage('Build & Push Frontend') {
             steps {
-                dir('frontend') {
+                dir('sportshub/frontend') {
                     sh '''
                         docker build \
                             -t $ECR_FRONTEND:$BUILD_NUMBER \
