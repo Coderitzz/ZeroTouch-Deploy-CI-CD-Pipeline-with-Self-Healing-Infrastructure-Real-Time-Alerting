@@ -1,6 +1,6 @@
 services:
   backend:
-    image: 692137657571.dkr.ecr.us-west-1.amazonaws.com/sportshub-backend:v1.0.0
+    image: 692137657571.dkr.ecr.us-west-1.amazonaws.com/sportshub-backend:latest
     container_name: sportshub-backend
     restart: unless-stopped
 
@@ -17,7 +17,7 @@ services:
       - "5000:5000"
 
   frontend:
-    image: 692137657571.dkr.ecr.us-west-1.amazonaws.com/sportshub-frontend:v1.0.0
+    image: 692137657571.dkr.ecr.us-west-1.amazonaws.com/sportshub-frontend:latest
     container_name: sportshub-frontend
     restart: unless-stopped
 

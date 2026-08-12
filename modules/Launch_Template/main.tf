@@ -14,7 +14,7 @@ resource "aws_launch_template" "app" {
   name_prefix = "app-launch-template-"
 
   image_id      = data.aws_ami.app_ami.id
-  instance_type = "t3.micro"
+  instance_type = "m7i-flex.large"
 
   vpc_security_group_ids = [
     var.aws_security_group_ec2_id

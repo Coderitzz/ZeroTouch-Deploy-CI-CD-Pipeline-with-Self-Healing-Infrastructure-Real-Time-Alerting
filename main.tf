@@ -28,7 +28,8 @@ module "asg" {
   private_subnet_id = module.vpc.private_subnet_id
   private_subnet_id-2 = module.vpc.private_subnet_id-2
   aws_launch_template_app_id = module.Launch_Template.aws_launch_template_app_id
-  target_group_arn = module.alb.target_group_arn
+  target_group_arns = [module.alb.target_group_arn,
+                      module.alb.frontend_target_group_arn]
 }
 
 module "alb" {
@@ -49,4 +50,11 @@ module "backend_ecr" {
   source = "./modules/ecr"
 
   repository_name = "sportshub-backend"
+}
+
+module "jenkins" {
+  source = "./modules/jenkins"
+  public_subnet_id = module.vpc.public_subnet_id
+  jenkins_sg_id = module.security_group.jenkins_sg_id
+  jenkins_instance_profile = module.iam.jenkins_instance_profile
 }

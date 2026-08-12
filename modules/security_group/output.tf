@@ -7,3 +7,8 @@ output "aws_security_group_ec2_id" {
 output "alb_sg_id" {
  value = aws_security_group.alb_sg.id
 }
+
+#Jenkins Security Group Id
+output "jenkins_sg_id" {
+ value = aws_security_group.jenkins_sg.id
+}
