@@ -62,34 +62,6 @@ pipeline {
             }
         }
 
-      #  stage('Wait for Refresh to Complete') {
-       #     steps {
-        #        sh '''
-         #       while true; do
-          #        STATUS=$(aws autoscaling describe-instance-refreshes \
-           #         --auto-scaling-group-name $ASG_NAME \
-            #        --query "InstanceRefreshes[0].Status" --output text)
-             #     echo "Refresh status: $STATUS"
-              #    if [ "$STATUS" = "Successful" ]; then
-               #     echo "Refresh completed successfully."
-                #    break
-                 # elif [ "$STATUS" = "Failed" ] || [ "$STATUS" = "Cancelled" ]; then
-                  #  echo "Refresh failed."
-                   # exit 1
-                 # fi
-                #  sleep 30
-               # done
-              #  '''
-           # }
-       # }
-
-       # stage('Health Check & Rollback') {
-        #    steps {
-         #       sh 'python3 health_check.py'   // Part 4 — we'll build this next
-          #  }
-       # }
-   # }
-
     post {
         success {
             echo "Deployment successful — build #${BUILD_NUMBER}"
