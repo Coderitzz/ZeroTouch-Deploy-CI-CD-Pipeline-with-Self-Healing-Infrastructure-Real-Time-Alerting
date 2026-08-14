@@ -28,7 +28,7 @@ systemctl start docker
 
 # Allow jenkins user to run docker commands
 usermod -aG docker jenkins
-
+systemctl restart jenkins
 # Install AWS CLI v2 (needed for ECR auth, ASG commands, etc.)
 cd /tmp
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o awscliv2.zip
