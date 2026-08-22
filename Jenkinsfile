@@ -77,7 +77,12 @@ pipeline {
                 '''
             }
         }
-    }
+
+      //  stage ('test')  {
+        //    steps {
+         //       sh 'curl http://public_ip/api/health'
+                   
+    //}
 
     post {
         success {
