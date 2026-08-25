@@ -16,6 +16,4 @@ RUN mkdir -p /app/instance
 
 EXPOSE 5000
 
-# Run migrations/seed is NOT done automatically here on purpose —
-# do it explicitly the first time via `docker compose exec backend python seed.py`
 CMD ["gunicorn", "--workers", "3", "--bind", "0.0.0.0:5000", "--access-logfile", "-", "--error-logfile", "-", "wsgi:app"]
