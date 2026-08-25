@@ -78,12 +78,6 @@ pipeline {
             }
         }
 
-      //  stage ('test')  {
-        //    steps {
-         //       sh 'curl http://public_ip/api/health'
-                   
-    //}
-
     post {
         success {
             echo "Deployment successful — build #${BUILD_NUMBER}"
