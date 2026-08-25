@@ -1,9 +1,3 @@
-# Save this file as /etc/systemd/system/sportshub.service on your server
-# Then run:
-#   sudo systemctl daemon-reload
-#   sudo systemctl enable sportshub
-#   sudo systemctl start sportshub
-
 [Unit]
 Description=Gunicorn instance to serve SportsHub Flask API
 After=network.target
